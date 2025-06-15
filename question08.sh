@@ -1,5 +1,5 @@
 #!/bin/bash
-mkdir dir2
-mv *.txt dir2/
-git add dir2
-git commit -m "Move text files to dir2 and commit"
+mkdir -p dir2
+find . -maxdepth 1 -type f -name "*.txt" -exec mv {} dir2/ \;
+git add -A
+git commit -m "Move .txt files to dir2 and commit"
